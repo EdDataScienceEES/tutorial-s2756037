@@ -1,4 +1,10 @@
-# Mapping Continued: Incorporating Intricate Details into Data Visualization
+# Advanced Data Manipulation: The Many Ways that Data can be Changed to Fit Your Needs
+## This tutorial aims to help with the tricker side of data manipulation
+
+## Learning Outcomes:
+1. How to upload data and what to do in case of errors
+2. Removing columns and rows from a dataset
+3. Filtering for certain words or numbers in a dataset
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6eRt7-90)
 # tutorial-instructions
