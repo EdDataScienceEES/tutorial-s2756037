@@ -28,7 +28,9 @@ Biodiversity_NY <- read.csv("Data/Biodiversity_by_County_-_Distribution_of_Anima
 # In the case of our data we want to only include to include County, Category (Animals), Taxonomic Group, Common name, and Federal status
 # There are multiple ways to tidy data, I have used three methods here.
 # 1st I used setdiff which allows me to say which columns I want to remove from the main dataset
-Biodiversity_NY_cleaned <- Biodiversity_NY[, setdiff(names(Biodiversity_NY), c("Taxonomic.Subgroup", "Scientific.Name", "Year.Last.Documented", "NY.Listing.Status", "State.Conservation.Rank", "Global.Conservation.Rank", "Distribution.Status"))] %>%
+Biodiversity_NY_cleaned <- Biodiversity_NY[, setdiff(names(Biodiversity_NY), c("Taxonomic.Subgroup", "Scientific.Name", "Year.Last.Documented", 
+                                                                               "NY.Listing.Status", "State.Conservation.Rank", "Global.Conservation.Rank", 
+                                                                               "Distribution.Status"))] %>%
   # 2nd I renamed one of the columns to make it easier to understand
   rename(Status = Federal.Listing.Status) %>%
   # 3rd I filtered to only include the organisms that were "Endangered" or "Threatened"
