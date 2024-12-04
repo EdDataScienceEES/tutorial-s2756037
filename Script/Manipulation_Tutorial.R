@@ -12,6 +12,8 @@ library(readr)
 library(tidyr)
 library(dplyr) 
 
+# LOAD AND TIDY DATA
+
 # 1a. Load Data
 # When loading data you want to make sure that you know the "path" to the data or else you will get error messages
 # saying that the data does not exist. This can be frustrating when you are first starting out but Github makes to easy
@@ -51,6 +53,8 @@ Biodiversity_NY_final <- Biodiversity_NY_cleaned[ , setdiff(names(Biodiversity_N
 print(Biodiversity_NY_final)
 # Based on the final cleaned data we now have a dataset that has been reduced from 5 variables to 3
 
+# FURTHER MANIPULATION USING ADDITIONAL DATA
+
 # 2a. Install package that allows for County data
 install.packages("tigris")
 library(tigris)
@@ -80,6 +84,8 @@ combined_data <- ny_counties %>%
 print(combined_data)
 # We can now see that the columns "Common.name" and "Status" have been added to the ny_counties data. This dataset would be useful
 # if you were to make a map with the data since it has geographical location information for the counties.
+
+# ADJUSTING DATA AND RUNNING LINEAR MODEL
 
 # 3a. Making Sense of the Data
 # When looking at the data it's clear that while some counties have no endangered or threatened species, some have more than one,
@@ -142,7 +148,7 @@ county_area <- data.frame(
 Final_data_area <- merge(county_area, final_county_data, by = "County", all.x = TRUE)
 # This is the final dataset that we will use to run the linear model
 
-# Run Linear model
+# 3d. Run Linear model
 # Since we want to know the relationship between the number of "At Risk" species per county and area of said county, we will use function
 # lm, which will give us the coefficients, R-squared value, and p-value
 model <- lm(At_Risk_Count ~ Area_Sq_Miles, data = Final_data_area)
