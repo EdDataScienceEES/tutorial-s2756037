@@ -69,7 +69,7 @@ print(Biodiversity_NY_cleaned)
 ```
 Based on the cleaned data we now have a dataset that has been reduced from 20507 objects to 89, and from 12 variables to 5
 
-<img width="272" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Biodiversity_NY_cleaned.png">
+<img width="500" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Biodiversity_NY_cleaned.png">
 
 1c. Filter data further to only include County, Common name, and Status
 Now that our original data has been become more selective, we can get rid of the two addition unneeded columns which are Category and Taxonomic Group, this can be done the same way as before but using the new dataset
@@ -82,7 +82,7 @@ print(Biodiversity_NY_final)
 ```
 Based on the final cleaned data we now have a dataset that has been reduced from 5 variables to 3
 
-<img width="394" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Biodiversity_NY_final.png">
+<img width="450" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Biodiversity_NY_final.png">
 
 <a name="2"></a>
 ### 2. Further Manipuation Using Addition Data
@@ -109,7 +109,7 @@ ny_counties <- us_counties[us_counties$STUSPS == "NY", ]  # Filter for New York
 ```
 This will create a dataset called ny_counties that has 62 counties and the same additional information as the full dataset had
 
-<img width="394" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/NY_counties.png">
+<img width="600" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/NY_counties.png">
 
 2d. Combine ny_counties with biodiversity_NY_final
 Merge with the county shapefile based on the county name
@@ -128,7 +128,7 @@ print(combined_data)
 we can now see that the columns "Common.name" and "Status" have been added to the ny_counties data. This dataset would be useful if you were to make a map with the data since it has geographical 
 location information for the counties.
 
-<img width="394" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Combined_Data.png">
+<img width="600" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Combined_Data.png">
 
 <a name="3"></a>
 ### 3. Adjusting Data and Running Linear Model
@@ -212,7 +212,7 @@ Final_data_area <- merge(county_area, final_county_data, by = "County", all.x = 
 ```
 This is the final dataset that we will use to run the linear model
 
-<img width="394" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/County_AtRisk_Area.png">
+<img width="500" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/County_AtRisk_Area.png">
 
 3d. Run Linear model
 Since we want to know the relationship between the number of "At Risk" species per county and area of said county, we will use function lm, which will give us the coefficients, R-squared value, and p-value
@@ -223,7 +223,7 @@ Summary of linear model
 ```r
 summary(model)
 ```
-<img width="394" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Linear_Model.png">
+<img width="500" alt="image" src="https://github.com/EdDataScienceEES/tutorial-s2756037/blob/1319bd892cd5749a7997633b26eef4e9dc298b05/Images/Linear_Model.png">
 
 
 ### Tutorial Practice
