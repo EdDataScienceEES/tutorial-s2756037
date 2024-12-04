@@ -63,14 +63,13 @@ library(tigris)
 # 2b. Load US county data
 # Load the US counties shapefile using tigris
 us_counties <- counties(cb = TRUE, resolution = "20m")
-# During this will create a dataset with all 3222 US counties along with their state location and other information 
+# Doing this will create a dataset with all 3222 US counties along with their state location and other information 
 # including their geographic signature and government number
 
 # 2c. Filter for only NY counties 
 # Include only New York counties since that is where our biodiversity data is taken from
 ny_counties <- us_counties[us_counties$STUSPS == "NY", ]  # Filter for New York
-# This will create a dataset called ny_counties that has 62 counties and the same additional information as the full d
-# dataset had
+# This will create a dataset called ny_counties that has 62 counties and the same additional information as the full dataset had
 
 # 2d. Combine ny_counties with biodiversity_NY_final
 # Merge with the county shapefile based on the county name
@@ -89,7 +88,7 @@ print(combined_data)
 
 # 3a. Making Sense of the Data
 # When looking at the data it's clear that while some counties have no endangered or threatened species, some have more than one,
-# so in order to create data that can be used for a linear model we will need to change some of that data from logical to numarical
+# so in order to create data that can be used for a linear model we will need to change some of that data from logical to numerical
 combined_data <- combined_data %>%
   mutate(Status = ifelse(Status %in% c("Threatened", "Endangered"), "At Risk", Status)) 
 # Doing this changed combined the two entities ("Threatened" and "Endangered") in the Status column and created a new entity called 
